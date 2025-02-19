@@ -1,0 +1,102 @@
+body {
+    width: 100vw;
+    height: 440px;
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url(../assets/images/banner.jpg);
+    position: relative; /* Required for absolute positioning */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    /* background-color: blue;  */
+}
+
+.banner {
+    position: relative; /* Required for positioning logo container */
+    width: 100%; /* Full width of the body */
+    height: 100%; /* Full height of the body */
+}
+
+.logo-container {
+    position: absolute; /* Absolute positioning */
+    top: calc(30%); /* Center vertically and move down by 20px */
+    left: 0; /* Align logo to the left edge */
+    margin-left: 100px; /* Add left margin */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align logo to the start (left) */
+    align-items: center; /* Center logo vertically */
+}
+
+
+
+.logo {
+    width: 500px; /* Set a specific width in pixels */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 0.5s forwards 0.1s; /* Fade in effect */
+}
+
+
+.date {
+    position: absolute; /* Absolute positioning */
+    left: 0; /* Align logo to the left edge */
+    margin-top: 130px;
+    margin-left: 50px; /* Add left margin */
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align logo to the start (left) */
+    align-items: center; /* Center logo vertically */
+}
+
+.date {
+    width: 300px; /* Set a specific width in pixels */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+}
+
+.date img {
+    width: 300px; /* Set a specific width in pixels */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't exceed container width */
+    opacity: 0; /* Initially hidden */
+    animation: fadeIn 0.5s forwards 0.6s; /* Fade in effect with delay */
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateY(20px); /* Start slightly down */
+    }
+    to {
+        opacity: 1; /* End fully opaque */
+        transform: translateY(0); /* End in original position */
+    }
+}
+
+@media (max-width: 430px) {
+    body {
+        height: 250px; /* Further adjust height for very small screens */
+    }
+
+    .logo-container {
+        top: 25%; /* Further adjust position */
+        margin-left: 50px; /* Further reduce left margin for small screens */
+    }
+
+    .logo {
+        width: 100%; /* Further scale down logo for very small screens */
+        max-width: 250px; /* Maximum width of the logo */
+    }
+
+    .date {
+        margin-top: 65px; /* Further adjust margin for smaller screens */
+        margin-left: 27px; /* Further reduce left margin for date */
+    }
+
+    .date img {
+        width: 80%; /* Further scale down date image for very small screens */
+        max-width: 160px; /* Maximum width of the date image */
+    }
+}
